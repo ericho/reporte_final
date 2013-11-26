@@ -1,0 +1,136 @@
+%%% Paquetes basicos
+
+\documentclass[letterpaper]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{lscape}
+\usepackage{multirow}
+\usepackage{appendix}
+
+\settrimmedsize{11in}{210mm}{*} % letter = 11in tall; a4 = 210mm wide
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{\stockwidth}
+\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{7.75in}{33pc}{*} % we want to the text block to have golden proportionals
+\setulmargins{4cm}{*}{*} % 50pt upper margins
+\setlrmargins{1.25in}{*}{*} % golden ratio again for left/right margins
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{*}{1.618}
+\checkandfixthelayout 
+
+\pretitle{\begin{center}\sffamily\huge\MakeUppercase}
+\posttitle{\par\end{center}\vskip 0.5em}
+
+\maxtocdepth{subsection} % include subsections
+\renewcommand{\cftchapterpagefont}{}
+\renewcommand{\cftchapterfont}{}     % no bold!
+\renewcommand{\chaptername}{Cap\'itulo}
+\renewcommand{\bibname}{Bibliograf\'ia}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\arraystretch}{1.2}
+\renewcommand{\contentsname}{Tabla de contenidos}
+\renewcommand{\appendixname}{Anexo}
+
+
+\pagestyle{companion} % try also: empty , plain , headings , ruled , Ruled , companion
+\chapterstyle{hangnum} % try also: default , section , hangnum , companion , article, demo
+
+\renewcommand{\chaptitlefont}{\Huge\sffamily\raggedright} % set sans serif chapter title font
+\renewcommand{\chapnumfont}{\Huge\sffamily\raggedright} % set sans serif chapter number font
+
+%%% SECTIONS
+\hangsecnum % hang the section numbers into the margin to match \chapterstyle{hangnum}
+\maxsecnumdepth{subsection} % number subsections
+
+\setsecheadstyle{\Large\sffamily\raggedright} % set sans serif section font
+\setsubsecheadstyle{\large\sffamily\raggedright} % set sans serif subsection font
+\newlength{\drop}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[spanish,activeacute]{babel}
+%\usepackage{amssymb}
+%\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+%\usepackage{titlesec}
+%\usepackage{multirow}
+%\usepackage{tabularx}
+%\usepackage{longtable} 
+%\usepackage{array}
+%\titleformat{\chapter}
+%  {\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
+%\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+%\renewcommand{\abstractname}{Resumen}
+%\renewcommand{\tablename}{Tabla}
+%\renewcommand{\figurename}{Figura}
+%\renewcommand{\bibname}{Bibliograf\'ia}
+
+%\makeatletter
+%\renewcommand\chapter{\par%
+%\thispagestyle{plain}%
+%\global\@topnum\z@
+%\@afterindentfalse
+%\secdef\@chapter\@schapter}
+%\makeatother
+\chapterstyle{madsen}
+\newcommand*{\plogo}{
+\includegraphics[scale=1]{imgs/logo_lania.eps}
+}
+
+
+\newcommand*{\titleUL}{\begingroup% LANIA 
+\drop=0.1\textheight
+\vspace*{\drop}
+\begin{center}
+
+{\LARGE \plogo}\\[\drop]
+\vspace{0.5\baselineskip}
+{\huge\bfseries Centro de enseñanza del \\Laboratorio Nacional de Informática Avanzada}\\[0.5\baselineskip]
+
+
+\rule{\textwidth}{1pt}\par
+\vspace{0.5\baselineskip}
+{\huge\bfseries Diseño e implementación de un circuito adaptador de protocolo RS-232 a ZigBee 802.15.4\\
+\large -}\\[0.5\baselineskip]
+\rule{\textwidth}{1pt}\par
+\vfill
+{\Large\textsc{Erich Ignacio Córdoba Malibrán}}
+\vfill
+Xalapa, Ver. 
+\vfill
+{\large Septiembre, 2013}
+\end{center}
+\endgroup}
+
+
+
+
+%\newcommand*{\titleUL}{\begingroup% University of Liege
+%\drop=0.1\textheight
+%\vspace*{\drop}
+%\begin{center}
+%{\LARGE\textsc{THE UNIVERSITY}}\\[\drop]
+% University logo
+%{\LARGE \plogo}\\[\drop]
+%\rule{\textwidth}{1pt}\par
+%\vspace{0.5\baselineskip}
+%{\huge\bfseries Conundrums: An Investigation of Mind Puzzles\\
+%\large --- in N pages, with T tables ---}\\[0.5\baselineskip]
+%\rule{\textwidth}{1pt}\par
+%\vfill
+%{\Large\textsc{The\footnote{\texttt{email address}} Candidate}}
+%\vfill
+%City, Country
+%\vfill
+%{\large The Date}
+%\end{center}
+%\endgroup}
+
+
+%\title{Diseño e implementación de un circuito adaptador de protocolo RS-232 a ZigBee IEEE 802.15.4}
+%\author{Erich Ignacio Córdoba Malibrán Asesor: Marco Antonio López Trinidad}
+%\date{junio, 2012}
