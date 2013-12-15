@@ -184,20 +184,20 @@ El nodo AVRRAVEN es un dispositivo compuesto por un transceptor inalámbrico de 
 
 \section{Atmel BitCloud}
 
-Atmel BitCloud\cite{atmel:bitcloud} es una implementación en software de los estándares IEEE 802.15.4 y ZigBee que ofrece una pila de desarrollo multicapa con protocolos de comunicación y servicios compartidos de administración de tareas, seguridad y manejo de energía. Su arquitectura, ver figura \ref{fig:bitcloud}, permite el acceso de las aplicaciones a los distintos componentes de hardware y tener acceso a los servicios compartidos con el núcleo de la pila, estos servicios compartidos son : 
+Atmel BitCloud\cite{atmel:bitcloud} es una implementación en software de los estándares IEEE 802.15.4 y ZigBee que ofrece una pila de desarrollo multicapa con protocolos de comunicación y servicios compartidos de administración de tareas, configuración, seguridad y manejo de energía. El núcleo de la arquitectura de BitCloud, ver figura \ref{fig:bitcloud}, se basa en la definición de ZigBee con la subcapa de soporte de aplicación (APS) como interfaz entre las aplicaciones y capas inferiores de red (NWK) y acceso al medio (MAC). La capa de dispositivos ZigBee (ZDO) provee funciones de administración de red y comandos de búsqueda de servicios y dispositivos en la red. 
 
-\begin{itemize}
-	\item Administrador de tareas : Administra el uso del procesador entre los componentes internos de la pila y las aplicaciones,
-	\item Administrador de energía : Es responsable de controlar el encendido y apagado de todos los componentes de la pila y de guardar y restaurar el estado de ejecución durante los ciclos de inactividad,  
-	\item Administrador de configuración : Administra los parámetros de configuración de la aplicación,
-\end{itemize}
+En el nivel más bajo de la arquitectura, la capa HAL (\textit{Hardware Abstraction Layer}) incluye un conjunto de funciones para el control de los distintos periféricos del microcontrolador (memoria EEPROM, temporizadores) e interfaces para la comunicación con dispositivos externos. La capa BSP (\textit{Board Support Package}) contiene manejadores para los periféricos disponibles en el dispositivo (sensores, memorias externas, botones). 
 
-Dentro del núcleo de BitCloud se implementa el conjunto de funciones del protocolo de comunicación, la capa APS (\textit{Application Support}) ofrece el nivel más alto de interacción con las aplicaciones y la capa ZDO (\textit{ZigBee Device Object}) ofrece interfaces para las principales tareas de gestión de la red (inicialización, reinicio, formación e ingreso). 
+Los servicios compartidos, representados como capas verticales en la figura \ref{fig:bitcloud}, son responsables de 1) manejar los parámetros de configuración del dispositivo, 2) de la administración de tareas mediante la planificación del uso del CPU entre los componentes internos y la aplicación y 3) del control del consumo de energía administrando los ciclos de inactividad de los periféricos y conservando su estado de ejecución. Estos servicios compartidos están disponibles para las capas de todos los niveles de BitCloud.
 
-En el nivel más bajo, la capa HAL (\textit{Hardware Abstraction Layer}) incluye un conjunto de funciones para el control de los distintos periféricos del microcontrolador (memoria EEPROM, temporizadores) e interfaces para la comunicación con dispositivos externos. La capa BSP (\textit{Board Support Package}) contiene manejadores para los periféricos disponibles en el dispositivo (sensores, memorias externas, botones). 
+\begin{figure}
+	\centering 
+	\includegraphics[scale=0.5]{capitulo_2_imgs/pila_bitcloud.pdf}
+	\caption{Pila de desarrollo BitCloud}
+	\label{fig:bitcloud}
+\end{figure}
 
-Distintas arquitecturas de hardware son soportadas en BitCloud, entre ellas los nodos RZRaven. Por esta razón, durante el desarrollo de este trabajo se utilizará a BitCloud para el desarrollo de la aplicación de la WSN. En particular, se utilizará el lenguaje de programación C y el compilador AVR-GCC, una versión optimizada del compilador \textit{GNU C Compiler} para microcontroladores Atmel.
-
+Distintas arquitecturas de hardware son soportadas en BitCloud, entre ellas los nodos RZRaven. Por esta razón, durante el desarrollo de este trabajo se utilizará a BitCloud para el desarrollo de la aplicación de la WSN. 
 %\subsection{Programación orientada a eventos}
 
 %La programación orientada a eventos es un paradigma de programación utilizado ampliamente en sistema embebidos donde los recursos de memoria y procesamiento son limitados. En este estilo de programación, cada función genera una señal asíncrona en cuanto termina su ejecución. Esta señal es entregada a través una llamada (\textit{Callback}) asociada a la función inicial. Es decir que al final de la ejecución de cada función, se ejecutará una función de respuesta. 
@@ -220,9 +220,3 @@ Esta abstracción le permite al programador separar en bloques o estados a la l�
 \end{itemize}
 
 
-\begin{figure}
-	\centering 
-	\includegraphics[scale=0.45]{capitulo_2_imgs/pila_bitcloud.pdf}
-	\caption{Pila de desarrollo BitCloud}
-	\label{fig:bitcloud}
-\end{figure}
