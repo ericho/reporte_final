@@ -198,23 +198,43 @@ Los servicios compartidos, representados como capas verticales en la figura \ref
 \end{figure}
 
 Distintas arquitecturas de hardware son soportadas en BitCloud, entre ellas los nodos RZRaven. Por esta razón, durante el desarrollo de este trabajo se utilizará a BitCloud para el desarrollo de la aplicación de la WSN. 
-%\subsection{Programación orientada a eventos}
 
-%La programación orientada a eventos es un paradigma de programación utilizado ampliamente en sistema embebidos donde los recursos de memoria y procesamiento son limitados. En este estilo de programación, cada función genera una señal asíncrona en cuanto termina su ejecución. Esta señal es entregada a través una llamada (\textit{Callback}) asociada a la función inicial. Es decir que al final de la ejecución de cada función, se ejecutará una función de respuesta. 
+%%\subsection{Programación orientada a eventos}
+
+%%La programación orientada a eventos es un paradigma de programación frecuentemente utilizado en sistemas embebidos donde restricciones de memoria y una escasa capacidad de procesamiento no permiten la ejecución de un sistema operativo completo. Así mismo, la programación orientada a eventos se refiere a un estilo de programación donde la invocación a una función esta relacionada a una notificación asíncrona que provee la respuesta de ejecución de dicha función. Esta respuesta se recibe mediante la ejecución de una función (\textit{Callback}) previamente definida.
+
+%%La figura \ref{fig:event_driven} muestra una comparación de la ejecución de funciones síncronas y asíncronas. En este ejemplo se muestra la interacción entre una aplicación y una API. Del lado izquierdo, se hace una llamada síncrona a la API usando la función API\_LeerPuerto(). La ejecución de la aplicación se detiene hasta que la función ha terminado y devuelve la información solicitada. Del lado derecho de la figura \ref{fig:event_driven} se hace una llamada asíncrona a la función API\_IniciarRed(). Esta función recibe como parámetro la función (\textit{Callback}) que será ejecutada al completarse la operación.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{capitulo_2_imgs/event-driven.pdf}
+	\caption{Llamadas síncronas y asíncronas}
+	\label{fig:event_driven}
+\end{figure}
 
 \subsection{Desarrollo de aplicaciones con Atmel BitCloud}
 
-Cualquier aplicación de BitCloud debe ser considerada como otro elemento de la pila, esto implica que las aplicaciones deben utilizar los mismos mecanismos de interacción que los componentes internos. En BitCloud la mayoría de las funciones dentro de sus componentes se ejecutan de manera asíncrona, razón por la cual se utiliza comunicación solicitud/confirmación para pasar información entre las distintas capas. 
+El funcionamiento de BitCloud está basado en la programación orientada a eventos, este paradigma de programación es frecuentemente utilizado en sistemas embebidos con restricciones de memoria y capacidad de procesamiento, de tal forma que no es posible ejecutar un sistema operativo completo. Así mismo, la programación orientada a eventos se refiere a un estilo de programación donde la invocación a una función esta relacionada a una notificación asíncrona que provee la respuesta de ejecución de dicha función. Esta respuesta se recibe mediante la ejecución de una función \textit{Callback} previamente definida. 
 
-En este modelo de comunicación entre capas, cada función ejecutada recibe como uno de sus parámetros una función que será llamada una vez que haya terminado su ejecución. Asi mismo, es posible definir funciones que serán ejecutadas cuando se presenten eventos externos, como mensajes entrantes de la red inalámbrica o recibir señales eléctricas de algún sensor.   
+La figura \ref{fig:event_driven} muestra una comparación de la ejecución de funciones síncronas y asíncronas. Del lado izquierdo, se hace una llamada síncrona a una API usando la función API\_LeerPuerto(). La ejecución de la aplicación se detiene hasta que la función ha terminado y devuelve la información solicitada. Del lado derecho de la figura \ref{fig:event_driven} se hace una llamada asíncrona a la función API\_IniciarRed(). Esta función recibe como parámetro la función (\textit{Callback}) que será ejecutada al completarse la operación. Este mecanismo de \textit{Solicitud/Confirmacion} (\textit{Request/Confirm}) se utiliza en BitCloud para la comunicación entre los distintos componentes de la pila. 
 
-Por otro lado, debido a que BitCloud está diseñado para ejecutarse en hardware con bajos recursos, la administración de tareas se realiza en un sólo hilo de ejecución, donde se determina la secuencia y prioridad de ejecución de las tareas de cada nivel de la pila. Para desarrollar aplicaciones dentro de este modelo de ejecución, el manual de programación de BitCloud recomienda representar a las aplicaciones como máquinas de estados finitos. 
+%Cualquier aplicación de BitCloud debe ser considerada como otro elemento de la pila, esto implica que las aplicaciones deben utilizar los mismos mecanismos de interacción que los componentes internos. En BitCloud la mayoría de las funciones dentro de sus componentes se ejecutan de manera asíncrona, razón por la cual se utiliza comunicación solicitud/confirmación para pasar información entre las distintas capas. 
 
-Esta abstracción le permite al programador separar en bloques o estados a la lógica de la aplicación. Sin embargo, se deben considerar las siguientes restricciones para asegurar el correcto funcionamiento del administrador de tareas: 
+%%En este modelo de comunicación entre capas, cada función ejecutada recibe como uno de sus parámetros una función que será llamada una vez que haya terminado su ejecución. Asi mismo, es posible definir funciones que serán ejecutadas cuando se presenten eventos externos, como mensajes entrantes de la red inalámbrica o recibir señales eléctricas de algún sensor.   
+
+Por otro lado, debido a que BitCloud está diseñado para ejecutarse en hardware con bajos recursos, la administración de tareas se realiza en un sólo hilo de ejecución, donde se determina la secuencia y prioridad de ejecución de las tareas de cada nivel de la pila. La figura \ref{fig:task_handler} muestra la ejecución de BitCloud, un ciclo infinito realiza iteraciones sobre todas las capas ejecutando el administrador de tareas para cada capa. La lógica de cada capa está diseñada como una máquina de estados finitos que cambia de estado en cada iteración del ciclo de ejecución. Asi mismo, las aplicaciones del usuario deben diseñarse con este modelo de ejecución separando en bloques o estados a la lógica de la aplicación. Sin embargo, se deben considerar las siguientes restricciones para asegurar el correcto funcionamiento del administrador de tareas: 
+
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.6]{capitulo_2_imgs/task_handler.pdf}
+	\caption{Ciclo de ejecución de BitCloud}
+	\label{fig:task_handler}
+\end{figure}
 
 \begin{itemize}
-	\item Cada función que realice solicitudes a otros niveles de la pila debe definir una función de confirmación que será ejecutada una vez que se haya completado la solicitud inicial, 
-	\item Es responsabilidad del usuario definir llamadas de confirmación para eventos inesperados tales como mensajes entrantes de la red inalámbrica, mensajes entrantes por la interfaz serial o interrupciones de señales eléctricas generadas por sensores u otros dispositivos,  
+	\item Cada función que realiza solicitudes a otros niveles de la pila debe definir una función de confirmación que será ejecutada una vez que se haya completado la solicitud inicial, 
+	\item Es responsabilidad del usuario definir la estructura de las funciones de confirmación para manejar eventos inesperados tales como mensajes entrantes de la red inalámbrica, mensajes entrantes por la interfaz serial o interrupciones de señales eléctricas generadas por sensores u otros dispositivos,  
 	\item El tiempo de ejecución de las funciones de confirmación no deben ser mayor a 10 ms, esto es para no interferir con las tareas de mayor prioridad en la pila. Si alguna función requiere mayor tiempo entonces se le puede asignar un estado dentro de la máquina de estados finitos de la aplicación, el cual será ejecutado una vez que el administrador de tareas le conceda la ejecución a la capa de aplicación, 
 	\item Debido a que la capa de aplicación cuenta con la menor prioridad en la pila, la ejecución de funciones dentro de este nivel no debe ser mayor a 50 ms. Esto con la finalidad de no interferir con la ejecución de las funciones con una prioridad mayor. 
 \end{itemize}
