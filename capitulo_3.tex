@@ -247,15 +247,40 @@ La primera respuesta devuelve una trama compuesta por 8 bytes, en este caso se d
 
 \subsection{Implementación de software embebido}
 
-El software embebido del dispositivo se realizó con la pila de desarrollo Atmel BitCloud. En BitCloud se establece que todas las aplicaciones que funcionen sobre esta pila deben ser diseñadas como una máquina de estados finitos, esto con la finalidad de encapsular el funcionamiento dentro de los diferentes estados de toda la aplicación. En la figura \ref{fig:maquina_estados_sd} se muestra el diseño de la aplicación donde se han definido los siguientes estados. 
+%El software embebido del dispositivo se realizó con la pila de desarrollo Atmel BitCloud. En BitCloud se establece que todas las aplicaciones que funcionen sobre esta pila deben ser diseñadas como una máquina de estados finitos, esto con la finalidad de encapsular el funcionamiento dentro de los diferentes estados de toda la aplicación. 
 
-\begin{itemize}
-	\item \textit{Inicialización : } Se realiza la configuración de los perífericos, en particular el puerto serial. Asimismo, se establecen los parámetros de configuración para la red inalámbrica. Por último BitCloud inicia la red inalámbrica, 
-	\item \textit{Inicio de red inalambrica : } En este estado se verifica que la red inalámbrica haya sido iniciada correctamente, en caso contrario regresa la aplicación al estado de inicialización,  
-	\item \textit{Esperar comandos y/o mensajes : } Espera por nuevos comandos disponibles para ser procesados,
-	\item \textit{Procesar comando : } Interpreta, verifica y procesa los comandos enviados desde el puerto serial, 
-	\item \textit{Enviar respuesta : } Envía un mensaje de respuesta luego de que cada comando ha sido ejecutado. 
-\end{itemize}
+%En la figura \ref{fig:maquina_estados_sd} se muestra el diseño de la aplicación donde se han definido los siguientes estados. 
+%La aplicación de BitCloud para el dispositivo, ver figura \ref{fig:maquina_estados_sd}, se estructura de la siguiente manera: 
+Para el software embebido del dispositivo se desarrolló una aplicación de BitCloud que se encarga de recibir mensajes y/o comandos desde la interfaz RS-232, validar que la información recibida esté estructura en términos del protocolo de comunicación diseñado y por último, implementar la funcionalidad de cada uno de los comandos, utilizando para esto las funciones que provee BitCloud para el control de periféricos y de la red inalámbrica. En la figura \ref{fig:maquina_estados_sd} se puede ver a la aplicación representada como una máquina de estados los cuales son detallados a continuación. 
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=1.2]{capitulo_3_imgs/app_sd.pdf}
+	\caption{Software embebido del dispositivo como máquina de estados}
+	\label{fig:maquina_estados_sd}
+\end{figure}
+
+\subsubsection{Inicialización}
+
+Se realiza la configuración de los períféricos, se establecen los parámetros de configuración y se inicia la red inalámbrica,
+En este estado de la aplicación se realizan las configuraciones de los periféricos. 
+
+\subsubsection{Inicio de la red inalámbrica}
+
+Se verifica que la red inalámbrica haya sido iniciada correctamente, en caso contrario regresa la aplicación al estado de inicialización,
+
+\subsubsection{Esperar comandos y/o mensajes}
+
+Espera por comandos enviados desde el puerto serial,
+
+\subsubsection{Procesamiento de comandos}
+
+Interpreta, verifica y procesa los comandos enviados desde el puerto serial,
+
+\subsubsection{Envío de respuestas}
+
+Envía un mensaje de respuesta luego de que cada comando ha sido ejecutado. 
+
 
 Es en el estado de \textit{Esperar comandos y/o mensajes} donde se concentra la funcionalidad de la aplicación. Cuando un comando o mensaje es enviado por el puerto serial un \textit{intérprete de protocolo} verifica la estructura de la trama de datos recibida y genera una estructura de datos que almacena el código del comando, el identificador del mensaje y los datos o parámetros proporcionados. 
 
@@ -264,12 +289,6 @@ Un \textit{intérprete de comandos} verifica que el comando recibido esté dentr
 La cola de solicitudes contiene la estructura de datos de cada comando recibido desde el puerto serial. El estado de \textit{Esperar comandos y/o mensajes} obtiene el primer elemento de la cola de solicitudes, ejecuta el comando asociado y almacena la respuesta en la cola de respuestas. Por último, el intérprete de protocolo convierte la estructura de datos nuevamente en una trama del protocolo para ser enviada por el puerto serial. En la figura \ref{fig:interprete_mensajes} se muestra un diagrama de bloques de este proceso. 
 
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=1.2]{capitulo_3_imgs/app_sd.pdf}
-	\caption{Software embebido del dispositivo como máquina de estados}
-	\label{fig:maquina_estados_sd}
-\end{figure}
 
 
 \begin{figure}
