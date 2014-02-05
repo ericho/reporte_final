@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="26cm" height="29cm" viewBox="138 54 510 567" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffa2e7" x="360" y="340" width="266.825" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360" y="340" width="266.825" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="493.413" y="362.9">
+      <tspan x="493.413" y="362.9">stateApp = ANALIZE_MESSAGE_STATE</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffa2e7" x="140" y="260" width="168.313" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="140" y="260" width="168.313" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="224.156" y="282.9">
+      <tspan x="224.156" y="282.9">stateApp = INIT_STATE</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffa2e7" x="428" y="476" width="147.581" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="428" y="476" width="147.581" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="501.791" y="498.9">
+      <tspan x="501.791" y="498.9">changeGlobalTask()</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #add8e6" points="501.835,136 647.67,210.113 501.835,284.226 356,210.113 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="501.835,136 647.67,210.113 501.835,284.226 356,210.113 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="501.835" y="198.013">
+      <tspan x="501.835" y="198.013">confInfo-&gt;status</tspan>
+      <tspan x="501.835" y="214.013">==</tspan>
+      <tspan x="501.835" y="230.013">ZDO_SUCCESS_STATUS</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="356,210.113 356,210 224.156,210 224.156,249.285 "/>
+    <polygon style="fill: #000000" points="224.156,256.785 219.156,246.785 224.156,249.285 229.156,246.785 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="224.156,256.785 219.156,246.785 224.156,249.285 229.156,246.785 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="501.951" y1="94.9912" x2="501.988" y2="124.264"/>
+    <polygon style="fill: #000000" points="501.997,131.764 496.985,121.77 501.988,124.264 506.985,121.758 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="501.997,131.764 496.985,121.77 501.988,124.264 506.985,121.758 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="501.835" y1="284.226" x2="501.97" y2="328.264"/>
+    <polygon style="fill: #000000" points="501.993,335.764 496.962,325.779 501.97,328.264 506.962,325.749 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="501.993,335.764 496.962,325.779 501.97,328.264 506.962,325.749 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="224.156,298 224.156,495 418.264,495 "/>
+    <polygon style="fill: #000000" points="425.764,495 415.764,500 418.264,495 415.764,490 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="425.764,495 415.764,500 418.264,495 415.764,490 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="504" y1="380" x2="504" y2="466.264"/>
+    <polygon style="fill: #000000" points="504,473.764 499,463.764 504,466.264 509,463.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="504,473.764 499,463.764 504,466.264 509,463.764 "/>
+  </g>
+  <g>
+    <path style="fill: #90ee90" d="M 454.28 56 L 543.398,56 C 555.703,56 565.678,64.5066 565.678,75 C 565.678,85.4934 555.703,94 543.398,94 L 454.28,94 C 441.975,94 432,85.4934 432,75 C 432,64.5066 441.975,56 454.28,56z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 454.28 56 L 543.398,56 C 555.703,56 565.678,64.5066 565.678,75 C 565.678,85.4934 555.703,94 543.398,94 L 454.28,94 C 441.975,94 432,85.4934 432,75 C 432,64.5066 441.975,56 454.28,56"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="498.839" y="71">
+      <tspan x="498.839" y="71">Inicio de red </tspan>
+      <tspan x="498.839" y="87">inalámbrica</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: #90ee90" d="M 440.588 580 L 562.938,580 C 579.831,580 593.525,588.954 593.525,600 C 593.525,611.046 579.831,620 562.938,620 L 440.588,620 C 423.694,620 410,611.046 410,600 C 410,588.954 423.694,580 440.588,580z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 440.588 580 L 562.938,580 C 579.831,580 593.525,588.954 593.525,600 C 593.525,611.046 579.831,620 562.938,620 L 440.588,620 C 423.694,620 410,611.046 410,600 C 410,588.954 423.694,580 440.588,580"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="501.763" y="604">
+      <tspan x="501.763" y="604">Cambio de estado</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="501.841" y1="514.99" x2="501.975" y2="568.264"/>
+    <polygon style="fill: #000000" points="501.994,575.764 496.969,565.777 501.975,568.264 506.969,565.751 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="501.994,575.764 496.969,565.777 501.975,568.264 506.969,565.751 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="280" y="200">
+    <tspan x="280" y="200">No</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="520" y="300">
+    <tspan x="520" y="300">Si</tspan>
+  </text>
+</svg>

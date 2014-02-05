@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="32cm" height="15cm" viewBox="1 10 622 282" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="2.27939" y="31.9544" width="620" height="260"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="2.27939" y="31.9544" width="620" height="260"/>
+    <rect style="fill: #ffffff" x="2.27939" y="11.9544" width="158" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="2.27939" y="11.9544" width="158" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="4.27939" y="25.9544">Análisis de mensajes</text>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="117.2" y="60.9" width="73.95" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="117.2" y="60.9" width="73.95" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="154.175" y="82.8">
+      <tspan x="154.175" y="82.8">BitCloud</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="127.2" y1="85.85" x2="181.15" y2="85.85"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="156" y1="100" x2="156" y2="124"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="156" y1="184" x2="156" y2="265.725"/>
+    <rect style="fill: #ffd294" x="149" y="124" width="14" height="60"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="149" y="124" width="14" height="60"/>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="258.183" y="62" width="126.994" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="258.183" y="62" width="126.994" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="321.68" y="83.9">
+      <tspan x="321.68" y="83.9">UsartController.c</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="268.183" y1="86.95" x2="375.176" y2="86.95"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="325.677" y1="99.8165" x2="325.677" y2="123.817"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="325.677" y1="213.817" x2="325.677" y2="269.26"/>
+    <rect style="fill: #ffd294" x="318.677" y="123.817" width="14" height="90"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="318.677" y="123.817" width="14" height="90"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="301.677" y1="123.837" x2="163" y2="124"/>
+    <polygon style="fill: #000000" points="301.683,128.837 317.677,123.818 301.671,118.837 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="301.683,128.837 317.677,123.818 301.671,118.837 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="240.838" y="133.908">recv_bytes()</text>
+  </g>
+  <ellipse style="fill: #ffd294" cx="36" cy="124" rx="10" ry="10"/>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="132" y1="124" x2="48" y2="124"/>
+    <polygon style="fill: #000000" points="132,129 148,124 132,119 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="132,129 148,124 132,119 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="98.5" y="134">RS-232</text>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="456.303" y="62" width="121.544" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="456.303" y="62" width="121.544" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="517.075" y="83.9">
+      <tspan x="517.075" y="83.9">ProtocolParser.c</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="466.303" y1="86.95" x2="567.847" y2="86.95"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="516.303" y1="102" x2="516.303" y2="213.709"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="516.303" y1="253.709" x2="516.303" y2="281.56"/>
+    <rect style="fill: #ffd294" x="509.303" y="213.709" width="14" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="509.303" y="213.709" width="14" height="40"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="492.303" y1="213.719" x2="332.677" y2="213.817"/>
+    <polygon style="fill: #000000" points="492.306,218.719 508.303,213.709 492.3,208.719 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="492.306,218.719 508.303,213.709 492.3,208.719 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="420.99" y="223.763">analize_data_received()</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="180" y1="164.02" x2="319.15" y2="164.183"/>
+    <polygon style="fill: #000000" points="180.006,159.02 164,164.001 179.994,169.02 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="180.006,159.02 164,164.001 179.994,169.02 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="241.075" y="174.091">HAL_ReadUsart()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="332.677,178.817 362.945,178.809 362.945,198.779 342.413,198.804 "/>
+    <polygon style="fill: #000000" points="334.913,198.814 344.907,193.801 342.413,198.804 344.919,203.801 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="334.913,198.814 344.907,193.801 342.413,198.804 344.919,203.801 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="338.391" y="169.509">
+    <tspan x="338.391" y="169.509">add_to_buffer(data)</tspan>
+  </text>
+</svg>

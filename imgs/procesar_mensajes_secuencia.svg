@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="36cm" height="20cm" viewBox="159 119 702 382" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="160" y="140" width="700" height="360"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="160" y="140" width="700" height="360"/>
+    <rect style="fill: #ffffff" x="160" y="120" width="134.9" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="160" y="120" width="134.9" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="162" y="134">Procesar mensajes</text>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="200" y="160" width="112.75" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="200" y="160" width="112.75" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="256.375" y="181.9">
+      <tspan x="256.375" y="181.9">SerialDongle.c</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="210" y1="184.95" x2="302.75" y2="184.95"/>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="380" y="160" width="121.544" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="380" y="160" width="121.544" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="440.772" y="181.9">
+      <tspan x="440.772" y="181.9">ProtocolParser.c</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="390" y1="184.95" x2="491.544" y2="184.95"/>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="580" y="160" width="103.55" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="580" y="160" width="103.55" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="631.775" y="181.9">
+      <tspan x="631.775" y="181.9">Commands.c</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="590" y1="184.95" x2="673.55" y2="184.95"/>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="760" y="160" width="73.95" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="760" y="160" width="73.95" height="36"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="796.975" y="181.9">
+      <tspan x="796.975" y="181.9">BitCloud</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="770" y1="184.95" x2="823.95" y2="184.95"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="256.375" y1="196" x2="256.375" y2="230"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="256.375" y1="430" x2="256.375" y2="460"/>
+    <rect style="fill: #ffd294" x="249.375" y="230" width="14" height="200"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="249.375" y="230" width="14" height="200"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="440.772" y1="196" x2="440.772" y2="230"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="440.772" y1="370" x2="440.772" y2="460"/>
+    <rect style="fill: #ffd294" x="433.772" y="230" width="14" height="140"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="433.772" y="230" width="14" height="140"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="416.772" y1="230" x2="263.375" y2="230"/>
+    <polygon style="fill: #000000" points="416.772,235 432.772,230 416.772,225 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="416.772,235 432.772,230 416.772,225 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="348.573" y="240">move_first_to_execute()</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="607.775" y1="284" x2="264" y2="284"/>
+    <polygon style="fill: #000000" points="607.775,289 623.775,284 607.775,279 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="607.775,289 623.775,284 607.775,279 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="444.387" y="294">parse_command()</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="631.775" y1="196" x2="631.775" y2="284"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="631.775" y1="344" x2="631.775" y2="450"/>
+    <rect style="fill: #ffd294" x="624.775" y="284" width="14" height="60"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="624.775" y="284" width="14" height="60"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="796.975" y1="196" x2="796.975" y2="300"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="796.975" y1="340" x2="796.975" y2="450"/>
+    <rect style="fill: #ffd294" x="789.975" y="300" width="14" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="789.975" y="300" width="14" height="40"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="772.975" y1="300" x2="638" y2="300"/>
+    <polygon style="fill: #000000" points="772.975,305 788.975,300 772.975,295 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="772.975,305 788.975,300 772.975,295 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="713.988" y="310">execute_command()</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="655.775" y1="324" x2="790" y2="324"/>
+    <polygon style="fill: #000000" points="655.775,319 639.775,324 655.775,329 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="655.775,319 639.775,324 655.775,329 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="415" y1="340" x2="264" y2="340"/>
+    <polygon style="fill: #000000" points="415,345 431,340 415,335 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="415,345 431,340 415,335 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="348" y="350">executed_to_output()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="263.375,380 300,380 299.665,420.379 273.736,420.104 "/>
+    <polygon style="fill: #000000" points="266.236,420.024 276.289,415.13 273.736,420.104 276.182,425.13 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="266.236,420.024 276.289,415.13 273.736,420.104 276.182,425.13 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="276" y="376">
+    <tspan x="276" y="376">changeGlobalTask()</tspan>
+  </text>
+</svg>
