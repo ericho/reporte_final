@@ -260,14 +260,77 @@ Para el software embebido del dispositivo se desarrolló una aplicación de BitC
 	\label{fig:maquina_estados_sd}
 \end{figure}
 
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{capitulo_3_imgs/Inicializacion.pdf}
+	\caption{Inicialización de la aplicación}
+	\label{fig:diagrama_inicializacion}
+\end{figure}
+
+
 \subsubsection{Inicialización}
 
-Se realiza la configuración de los períféricos, se establecen los parámetros de configuración y se inicia la red inalámbrica,
-En este estado de la aplicación se realizan las configuraciones de los periféricos. 
+Al iniciar la aplicación, ver figura \ref{fig:diagrama_inicializacion}, las función init\_usart() es llamada para configurar el puerto serial mediante el control de periféricos que provee BitCloud, asi mismo se configuran los puertos para los LEDs indicadores de la tarjeta. Posteriormente se inicializan las listas de almacenamiento de mensajes que se detallaran más adelante. 
+
+La aplicación se registra en BitCloud utilizando un identificador (\textit{end point}) único en la red, y con esta información se solicita el inicio de la red a BitCloud. Al terminar esta solicitud la función asíncrona ZDO\_StartNetworkConf() es llamada y realiza el cambio de estado de la aplicación. 
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{capitulo_3_imgs/inicio_red.pdf}
+	\caption{Inicio de la red inalámbrica}
+	\label{fig:diagrama_inicio_red}
+\end{figure}
 
 \subsubsection{Inicio de la red inalámbrica}
 
-Se verifica que la red inalámbrica haya sido iniciada correctamente, en caso contrario regresa la aplicación al estado de inicialización,
+En este estado se analiza el resultado de la operación de BitCloud para el inicio de la red inalámbrica. Si el resultado es ZDO\_SUCCESS\_STATUS entonces la red inalámbrica ha sido iniciada correctamente y el dispositivo está listo para iniciar su operación pasando al estado de \textit{Esperar comandos y/o mensajes}, de lo controlario el dispositivo vuelve al estado de \textit{Inicialización} del dispositivo. En la figura \ref{fig:diagrama_inicio_red} se muestra el diagrama de flujo de este estado.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.45]{capitulo_3_imgs/analisis_mensajes_secuencia.pdf}
+	\caption{Diagrama de secuencia de análisis de mensajes}
+	\label{fig:diagrama_secuencia_analisis}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{capitulo_3_imgs/analisis_mensajes_flujo.pdf}
+	\caption{Diagrama de flujo de análisis de mensajes}
+	\label{fig:diagrama_flujo_analisis}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.25]{capitulo_3_imgs/analisis_mensaje_flujo_parser.pdf}
+	\caption{Diagrama de flujo análisis de protocolo}
+	\label{fig:diagrama_flujo_parser}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{capitulo_3_imgs/procesar_mensajes_secuencia.pdf}
+	\caption{Diagrama de secuencia de procesamiento de mensajes}
+	\label{fig:diagrama_secuencia_procesamiento}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{capitulo_3_imgs/procesar_mensaje_flujo.pdf}
+	\caption{Diagrama de flujo de procesamiento de mensajes}
+	\label{fig:diagrama_flujo_procesamiento}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{capitulo_3_imgs/enviar_mensajes_secuencia.pdf}
+	\caption{Diagrama de secuencia enviar mensajes}
+	\label{fig:diagrama_enviar_secuencia}
+\end{figure}
+
+
+
+
+
 
 \subsubsection{Esperar comandos y/o mensajes}
 
@@ -287,8 +350,6 @@ Es en el estado de \textit{Esperar comandos y/o mensajes} donde se concentra la 
 Un \textit{intérprete de comandos} verifica que el comando recibido esté dentro de los comandos soportados por el dispositivo y que los parámetros sean correctos. Si esto es correcto, la estructura de datos es ingresada en la \textit{cola de solicitudes}, en caso contrario la estructura de datos se ingresa en la \textit{cola de respuestas}. 
 
 La cola de solicitudes contiene la estructura de datos de cada comando recibido desde el puerto serial. El estado de \textit{Esperar comandos y/o mensajes} obtiene el primer elemento de la cola de solicitudes, ejecuta el comando asociado y almacena la respuesta en la cola de respuestas. Por último, el intérprete de protocolo convierte la estructura de datos nuevamente en una trama del protocolo para ser enviada por el puerto serial. En la figura \ref{fig:interprete_mensajes} se muestra un diagrama de bloques de este proceso. 
-
-
 
 
 \begin{figure}

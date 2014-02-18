@@ -1,137 +1,635 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-<svg width="39cm" height="23cm" viewBox="-1 -2 762 442" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g>
-    <rect style="fill: #ffffff" x="0" y="20" width="760" height="400"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0" y="20" width="760" height="400"/>
-    <rect style="fill: #ffffff" x="0" y="0" width="111.8" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0" y="0" width="111.8" height="20"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="2" y="14">Inicialización</text>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="39cm"
+   height="22cm"
+   viewBox="-1 -2 762 422"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Inicializacion.svg">
+  <metadata
+     id="metadata222">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs220" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="833"
+     id="namedview218"
+     showgrid="false"
+     inkscape:zoom="1.3631568"
+     inkscape:cx="804.92208"
+     inkscape:cy="289.01792"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <g
+     id="g4">
+    <rect
+       style="fill: #ffffff"
+       x="0"
+       y="20"
+       width="760"
+       height="400"
+       id="rect6" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="0"
+       y="20"
+       width="760"
+       height="400"
+       id="rect8" />
+    <rect
+       style="fill: #ffffff"
+       x="0"
+       y="0"
+       width="111.8"
+       height="20"
+       id="rect10" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="0"
+       y="0"
+       width="111.8"
+       height="20"
+       id="rect12" />
+    <text
+       font-size="12.7998"
+       style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal"
+       x="2"
+       y="14"
+       id="text14">Inicialización</text>
   </g>
-  <g>
-    <rect style="fill: #ffd294" x="28.1371" y="60" width="112.75" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="28.1371" y="60" width="112.75" height="36"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="84.5121" y="81.9">
-      <tspan x="84.5121" y="81.9">SerialDongle.c</tspan>
+  <g
+     id="g16">
+    <rect
+       style="fill: #ffd294"
+       x="28.1372"
+       y="60"
+       width="103.15"
+       height="36"
+       id="rect18" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="28.1372"
+       y="60"
+       width="103.15"
+       height="36"
+       id="rect20" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="79.7122"
+       y="81.6"
+       id="text22">
+      <tspan
+         x="79.7122"
+         y="81.6"
+         id="tspan24">SerialDongle.c</tspan>
     </text>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="38.1371" y1="84.95" x2="130.887" y2="84.95"/>
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000"
+       x1="38.1372"
+       y1="84.3"
+       x2="121.287"
+       y2="84.3"
+       id="line26" />
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="88.1371" y1="100" x2="88.1371" y2="140"/>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="88.1371" y1="380" x2="88.1371" y2="440"/>
-    <rect style="fill: #ffd294" x="81.1371" y="140" width="14" height="240"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="81.1371" y="140" width="14" height="240"/>
+  <g
+     id="g28">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="88.1372"
+       y1="100"
+       x2="88.1372"
+       y2="140"
+       id="line30" />
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="88.1372"
+       y1="380"
+       x2="88.1372"
+       y2="407.787"
+       id="line32" />
+    <rect
+       style="fill: #ffd294"
+       x="81.1372"
+       y="140"
+       width="14"
+       height="240"
+       id="rect34" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="81.1372"
+       y="140"
+       width="14"
+       height="240"
+       id="rect36" />
   </g>
-  <g>
-    <rect style="fill: #ffd294" x="343.846" y="60" width="126.994" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="343.846" y="60" width="126.994" height="36"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="407.343" y="81.9">
-      <tspan x="407.343" y="81.9">UsartController.c</tspan>
+  <g
+     id="g38">
+    <rect
+       style="fill: #ffd294"
+       x="343.846"
+       y="60"
+       width="115.2"
+       height="36"
+       id="rect40" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="343.846"
+       y="60"
+       width="115.2"
+       height="36"
+       id="rect42" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="401.446"
+       y="81.6"
+       id="text44">
+      <tspan
+         x="401.446"
+         y="81.6"
+         id="tspan46">UsartController.c</tspan>
     </text>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="353.846" y1="84.95" x2="460.84" y2="84.95"/>
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000"
+       x1="353.846"
+       y1="84.3"
+       x2="449.046"
+       y2="84.3"
+       id="line48" />
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="403.846" y1="100" x2="403.846" y2="140"/>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="403.846" y1="160" x2="403.846" y2="360"/>
-    <rect style="fill: #ffd294" x="396.846" y="140" width="14" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="396.846" y="140" width="14" height="20"/>
+  <g
+     id="g50">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="403.846"
+       y1="100"
+       x2="403.846"
+       y2="140"
+       id="line52" />
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="403.846"
+       y1="160"
+       x2="403.846"
+       y2="360"
+       id="line54" />
+    <rect
+       style="fill: #ffd294"
+       x="396.846"
+       y="140"
+       width="14"
+       height="20"
+       id="rect56" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="396.846"
+       y="140"
+       width="14"
+       height="20"
+       id="rect58" />
   </g>
-  <g>
-    <rect style="fill: #ffd294" x="657.533" y="60" width="73.95" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="657.533" y="60" width="73.95" height="36"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="694.508" y="81.9">
-      <tspan x="694.508" y="81.9">BitCloud</tspan>
+  <g
+     id="g60">
+    <rect
+       style="fill: #ffd294"
+       x="657.534"
+       y="60"
+       width="68.35"
+       height="36"
+       id="rect62" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="657.534"
+       y="60"
+       width="68.35"
+       height="36"
+       id="rect64" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="691.709"
+       y="81.6"
+       id="text66">
+      <tspan
+         x="691.709"
+         y="81.6"
+         id="tspan68">BitCloud</tspan>
     </text>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="667.533" y1="84.95" x2="721.483" y2="84.95"/>
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000"
+       x1="667.534"
+       y1="84.3"
+       x2="715.884"
+       y2="84.3"
+       id="line70" />
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="700" y1="100" x2="700" y2="150"/>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="700" y1="330" x2="700" y2="360"/>
-    <rect style="fill: #ffd294" x="693" y="150" width="14" height="180"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="693" y="150" width="14" height="180"/>
+  <g
+     id="g72">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="700"
+       y1="100"
+       x2="700"
+       y2="150"
+       id="line74" />
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="700"
+       y1="330"
+       x2="700"
+       y2="360"
+       id="line76" />
+    <rect
+       style="fill: #ffd294"
+       x="693"
+       y="150"
+       width="14"
+       height="180"
+       id="rect78" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="693"
+       y="150"
+       width="14"
+       height="180"
+       id="rect80" />
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="379.846" y1="140" x2="96" y2="140"/>
-    <polygon style="fill: #000000" points="379.846,145 395.846,140 379.846,135 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="379.846,145 395.846,140 379.846,135 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="246.423" y="150">init_usart()</text>
+  <g
+     id="g82">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="379.846"
+       y1="140"
+       x2="96"
+       y2="140"
+       id="line84" />
+    <polygon
+       style="fill: #000000"
+       points="379.846,145 395.846,140 379.846,135 "
+       id="polygon86" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="379.846,145 395.846,140 379.846,135 "
+       id="polygon88" />
+    <text
+       font-size="12.7998"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="246.422"
+       y="150"
+       id="text90">init_usart()</text>
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="675" y1="152" x2="412" y2="152"/>
-    <polygon style="fill: #000000" points="675,157 691,152 675,147 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="675,157 691,152 675,147 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="552" y="162"/>
+  <g
+     id="g92">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="675"
+       y1="152"
+       x2="412"
+       y2="152"
+       id="line94" />
+    <polygon
+       style="fill: #000000"
+       points="675,157 691,152 675,147 "
+       id="polygon96" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="675,157 691,152 675,147 "
+       id="polygon98" />
+    <text
+       font-size="12.7998"
+       style="font-size:12.79979992px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#000000;font-family:sans-serif"
+       x="552"
+       y="162"
+       id="text100">HAL_OpenUsart(&amp;usart_descriptor)</text>
   </g>
-  <g>
-    <rect style="fill: #ffd294" x="512.904" y="60" width="91.4937" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="512.904" y="60" width="91.4937" height="36"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="558.651" y="81.9">
-      <tspan x="558.651" y="81.9">Visualizer.c</tspan>
+  <g
+     id="g102">
+    <rect
+       style="fill: #ffd294"
+       x="512.904"
+       y="60"
+       width="84.5"
+       height="36"
+       id="rect104" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="512.904"
+       y="60"
+       width="84.5"
+       height="36"
+       id="rect106" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="555.154"
+       y="81.6"
+       id="text108">
+      <tspan
+         x="555.154"
+         y="81.6"
+         id="tspan110">Visualizer.c</tspan>
     </text>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="522.904" y1="84.95" x2="594.398" y2="84.95"/>
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000"
+       x1="522.904"
+       y1="84.3"
+       x2="587.404"
+       y2="84.3"
+       id="line112" />
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="560.904" y1="96" x2="560.904" y2="188"/>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="560.904" y1="208" x2="560.904" y2="360"/>
-    <rect style="fill: #ffd294" x="553.904" y="188" width="14" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="553.904" y="188" width="14" height="20"/>
+  <g
+     id="g114">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="560.904"
+       y1="96"
+       x2="560.904"
+       y2="188"
+       id="line116" />
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="560.904"
+       y1="208"
+       x2="560.904"
+       y2="360"
+       id="line118" />
+    <rect
+       style="fill: #ffd294"
+       x="553.904"
+       y="188"
+       width="14"
+       height="20"
+       id="rect120" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="553.904"
+       y="188"
+       width="14"
+       height="20"
+       id="rect122" />
   </g>
-  <g>
-    <rect style="fill: #ffd294" x="180" y="60" width="121.544" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="180" y="60" width="121.544" height="36"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="240.772" y="81.9">
-      <tspan x="240.772" y="81.9">ProtocolParser.c</tspan>
+  <g
+     id="g124">
+    <rect
+       style="fill: #ffd294"
+       x="180"
+       y="60"
+       width="113.8"
+       height="36"
+       id="rect126" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="180"
+       y="60"
+       width="113.8"
+       height="36"
+       id="rect128" />
+    <text
+       font-size="12.8"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="236.9"
+       y="81.6"
+       id="text130">
+      <tspan
+         x="236.9"
+         y="81.6"
+         id="tspan132">ProtocolParser.c</tspan>
     </text>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="190" y1="84.95" x2="291.544" y2="84.95"/>
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000"
+       x1="190"
+       y1="84.3"
+       x2="283.8"
+       y2="84.3"
+       id="line134" />
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="240" y1="100" x2="240" y2="216"/>
-    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000" x1="240" y1="236" x2="240" y2="360"/>
-    <rect style="fill: #ffd294" x="233" y="216" width="14" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="233" y="216" width="14" height="20"/>
+  <g
+     id="g136">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="240"
+       y1="100"
+       x2="240"
+       y2="216"
+       id="line138" />
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 1; stroke-dasharray: 8; stroke: #000000"
+       x1="240"
+       y1="236"
+       x2="240"
+       y2="360"
+       id="line140" />
+    <rect
+       style="fill: #ffd294"
+       x="233"
+       y="216"
+       width="14"
+       height="20"
+       id="rect142" />
+    <rect
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x="233"
+       y="216"
+       width="14"
+       height="20"
+       id="rect144" />
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="535" y1="189.578" x2="96" y2="189.578"/>
-    <polygon style="fill: #000000" points="535,194.578 551,189.578 535,184.578 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="535,194.578 551,189.578 535,184.578 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="324" y="199.578">startVisualizer()</text>
+  <g
+     id="g146">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="535"
+       y1="189.578"
+       x2="96"
+       y2="189.578"
+       id="line148" />
+    <polygon
+       style="fill: #000000"
+       points="535,194.578 551,189.578 535,184.578 "
+       id="polygon150" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="535,194.578 551,189.578 535,184.578 "
+       id="polygon152" />
+    <text
+       font-size="12.7998"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="324"
+       y="199.578"
+       id="text154">startVisualizer()</text>
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="675" y1="193.452" x2="568" y2="193.452"/>
-    <polygon style="fill: #000000" points="675,198.452 691,193.452 675,188.452 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="675,198.452 691,193.452 675,188.452 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="630" y="203.452">BSP_OpenLeds()</text>
+  <g
+     id="g156">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="675"
+       y1="193.452"
+       x2="568"
+       y2="193.452"
+       id="line158" />
+    <polygon
+       style="fill: #000000"
+       points="675,198.452 691,193.452 675,188.452 "
+       id="polygon160" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="675,198.452 691,193.452 675,188.452 "
+       id="polygon162" />
+    <text
+       font-size="12.7998"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="630"
+       y="203.452"
+       id="text164">BSP_OpenLeds()</text>
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="216" y1="216.101" x2="96" y2="216.812"/>
-    <polygon style="fill: #000000" points="216.03,221.101 232,216.006 215.971,211.101 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="216.03,221.101 232,216.006 215.971,211.101 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="164.5" y="226.406">init_lists()</text>
+  <g
+     id="g166">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="216"
+       y1="216.101"
+       x2="96"
+       y2="216.812"
+       id="line168" />
+    <polygon
+       style="fill: #000000"
+       points="216.03,221.101 232,216.006 215.971,211.101 "
+       id="polygon170" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="216.03,221.101 232,216.006 215.971,211.101 "
+       id="polygon172" />
+    <text
+       font-size="12.7998"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="164.5"
+       y="226.406"
+       id="text174">init_lists()</text>
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="675" y1="252.432" x2="96" y2="252.432"/>
-    <polygon style="fill: #000000" points="675,257.432 691,252.432 675,247.432 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="675,257.432 691,252.432 675,247.432 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="394" y="262.432"/>
+  <g
+     id="g176">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000"
+       x1="113"
+       y1="331.943"
+       x2="693"
+       y2="330"
+       id="line178" />
+    <polygon
+       style="fill: #000000"
+       points="112.983,326.943 97,331.997 113.017,336.943 "
+       id="polygon180" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="112.983,326.943 97,331.997 113.017,336.943 "
+       id="polygon182" />
+    <text
+       font-size="12.7998"
+       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       x="394.5"
+       y="341"
+       id="text184">ZDO_StartNetworkConf(</text>
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="675" y1="280" x2="96" y2="280"/>
-    <polygon style="fill: #000000" points="675,285 691,280 675,275 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="675,285 691,280 675,275 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="394" y="290"/>
+  <g
+     id="g186">
+    <polyline
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="96,348 128,348 128,372 105.736,372 "
+       id="polyline188" />
+    <polygon
+       style="fill: #000000"
+       points="98.2361,372 108.236,367 105.736,372 108.236,377 "
+       id="polygon190" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="98.2361,372 108.236,367 105.736,372 108.236,377 "
+       id="polygon192" />
   </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="113" y1="331.943" x2="693" y2="330"/>
-    <polygon style="fill: #000000" points="112.983,326.943 97,331.997 113.017,336.943 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="112.983,326.943 97,331.997 113.017,336.943 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="394.5" y="341">ZDO_StartNetworkConf(</text>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="96,348 128,348 128,372 105.736,372 "/>
-    <polygon style="fill: #000000" points="98.2361,372 108.236,367 105.736,372 108.236,377 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="98.2361,372 108.236,367 105.736,372 108.236,377 "/>
-  </g>
-  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="132" y="364">
-    <tspan x="132" y="364">ChangeGlobalTask()</tspan>
+  <text
+     font-size="12.8"
+     style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal"
+     x="132"
+     y="364"
+     id="text194">
+    <tspan
+       x="132"
+       y="364"
+       id="tspan196">ChangeGlobalTask()</tspan>
   </text>
+  <g
+     id="g198">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="675"
+       y1="280"
+       x2="96"
+       y2="280"
+       id="line200" />
+    <polygon
+       style="fill: #000000"
+       points="675,285 691,280 675,275 "
+       id="polygon202" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="675,285 691,280 675,275 "
+       id="polygon204" />
+    <text
+       font-size="12.7998"
+       style="font-size:12.79979992px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#000000;font-family:sans-serif"
+       x="394"
+       y="290"
+       id="text206">ZDO_StartNetworkReq(&amp;networkReq)</text>
+  </g>
+  <g
+     id="g208">
+    <line
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       x1="675"
+       y1="252.432"
+       x2="96"
+       y2="252.432"
+       id="line210" />
+    <polygon
+       style="fill: #000000"
+       points="675,257.432 691,252.432 675,247.432 "
+       id="polygon212" />
+    <polygon
+       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       points="675,257.432 691,252.432 675,247.432 "
+       id="polygon214" />
+    <text
+       font-size="12.7998"
+       style="font-size:12.79979992px;font-style:normal;font-weight:normal;text-anchor:middle;fill:#000000;font-family:sans-serif"
+       x="394"
+       y="262.43201"
+       id="text216">APS_RegisterEndPoint(&amp;endPoint)</text>
+  </g>
 </svg>
