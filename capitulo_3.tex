@@ -247,18 +247,14 @@ La primera respuesta devuelve una trama compuesta por 8 bytes, en este caso se d
 
 \subsection{Implementación de software embebido}
 
-%El software embebido del dispositivo se realizó con la pila de desarrollo Atmel BitCloud. En BitCloud se establece que todas las aplicaciones que funcionen sobre esta pila deben ser diseñadas como una máquina de estados finitos, esto con la finalidad de encapsular el funcionamiento dentro de los diferentes estados de toda la aplicación. 
-
-%En la figura \ref{fig:maquina_estados_sd} se muestra el diseño de la aplicación donde se han definido los siguientes estados. 
-%La aplicación de BitCloud para el dispositivo, ver figura \ref{fig:maquina_estados_sd}, se estructura de la siguiente manera: 
-Para el software embebido del dispositivo se desarrolló una aplicación de BitCloud que se encarga de recibir mensajes y/o comandos desde la interfaz RS-232, validar que la información recibida esté estructura en términos del protocolo de comunicación diseñado y por último, implementar la funcionalidad de cada uno de los comandos, utilizando para esto las funciones que provee BitCloud para el control de periféricos y de la red inalámbrica. En la figura \ref{fig:maquina_estados_sd} se puede ver a la aplicación representada como una máquina de estados los cuales son detallados a continuación. 
-
 \begin{figure}
 	\centering
 	\includegraphics[scale=1.2]{capitulo_3_imgs/app_sd.pdf}
 	\caption{Software embebido del dispositivo como máquina de estados}
 	\label{fig:maquina_estados_sd}
 \end{figure}
+
+Para el software embebido del dispositivo se desarrolló una aplicación de BitCloud que se encarga de recibir mensajes y/o comandos desde la interfaz RS-232, validar que la información recibida esté estructura en términos del protocolo de comunicación diseñado y por último, implementar la funcionalidad de cada uno de los comandos, utilizando para esto las funciones que provee BitCloud para el control de periféricos y de la red inalámbrica. En la figura \ref{fig:maquina_estados_sd} se puede ver a la aplicación representada como una máquina de estados los cuales son detallados a continuación. 
 
 \begin{figure}
 	\centering
@@ -267,10 +263,9 @@ Para el software embebido del dispositivo se desarrolló una aplicación de BitC
 	\label{fig:diagrama_inicializacion}
 \end{figure}
 
-
 \subsubsection{Inicialización}
 
-Al iniciar la aplicación, ver figura \ref{fig:diagrama_inicializacion}, las función init\_usart() es llamada para configurar el puerto serial mediante el control de periféricos que provee BitCloud, asi mismo se configuran los puertos para los LEDs indicadores de la tarjeta. Posteriormente se inicializan las listas de almacenamiento de mensajes que se detallaran más adelante. 
+Al iniciar la aplicación, ver figura \ref{fig:diagrama_inicializacion}, las función init\_usart() es llamada para configurar el puerto serial mediante el control de periféricos que provee BitCloud, asi mismo se configuran los puertos para los LEDs indicadores de la tarjeta. Posteriormente se inicializan las colas de almacenamiento de mensajes que se detallaran más adelante. 
 
 La aplicación se registra en BitCloud utilizando un identificador (\textit{end point}) único en la red, y con esta información se solicita el inicio de la red a BitCloud. Al terminar esta solicitud la función asíncrona ZDO\_StartNetworkConf() es llamada y realiza el cambio de estado de la aplicación. 
 
@@ -283,7 +278,23 @@ La aplicación se registra en BitCloud utilizando un identificador (\textit{end 
 
 \subsubsection{Inicio de la red inalámbrica}
 
-En este estado se analiza el resultado de la operación de BitCloud para el inicio de la red inalámbrica. Si el resultado es ZDO\_SUCCESS\_STATUS entonces la red inalámbrica ha sido iniciada correctamente y el dispositivo está listo para iniciar su operación pasando al estado de \textit{Esperar comandos y/o mensajes}, de lo controlario el dispositivo vuelve al estado de \textit{Inicialización} del dispositivo. En la figura \ref{fig:diagrama_inicio_red} se muestra el diagrama de flujo de este estado.
+En este estado se analiza el resultado de la operación de BitCloud para el inicio de la red inalámbrica. Si el resultado es ZDO\_SUCCESS\_STATUS entonces la red inalámbrica ha sido iniciada correctamente y el dispositivo está listo para iniciar su operación pasando al estado de \textit{Esperar comandos y/o mensajes}, de lo contrario el dispositivo vuelve al estado de \textit{Inicialización} del dispositivo. En la figura \ref{fig:diagrama_inicio_red} se muestra el diagrama de flujo de este estado.
+
+
+\subsubsection{Esperar comandos y/o mensajes}
+
+En este estado la aplicación espera por comandos enviados desde el puerto serial, la figura \ref{fig:interprete_mensajes} muestra un diagrama de bloques con los distintos elementos de este estado. La información recibida es validada y desempaquetada por el \textit{intérprete de protocolo} para luego ser almacenada en la cola de comandos entrante, posteriormente el \textit{intérprete de comandos} valida el comando especificado. Cada comando es ejecutado y su resultado es almacenado en la cola de mensajes salientes. Por último la información es enviada por la interfaz serial en la estructura del protocolo de comunicación.  
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{capitulo_3_imgs/estructura_interprete.pdf}
+	\caption{Estructura del intérprete de mensajes}
+	\label{fig:interprete_mensajes}
+\end{figure}
+
+En la figura \ref{fig:diagrama_secuencia_analisis} se detalla la recepción de información por el puerto serial. Cuando un byte es recibido, BitCloud ejecuta la función recv\_bytes() para obtener la información y almacenarla en un buffer temporal. Para poder interpretar la trama recibida es necesario tener por lo menos tres bytes: la cabecera de la trama y los dos bytes de la longitud. Teniendo esta información se han definido dos condiciones para interpretar un inicio de trama válido: 1) que el primer byte tenga el valor de la cabecera (0x55) y 2) que el valor de la longitud sea mayor o igual a 6 bytes, el tamaño de trama mínimo. Si alguna de estas condiciones no se cumple se genera un mensaje de error y se envia por el puerto serial. En la figura \ref{fig:diagrama_flujo_parser} se muestra el diagrama de flujo para el intérprete de protocolo.
+
+Cuando se ha recibido un número de bytes igual a la longitud de la trama entonces se comprueba que el último byte corresponda al final de trama (0xAA). La información restante se desempaqueta de acuerdo a la posisición de cada byte en la trama. Por último se crea una estructura de datos, ver tabla \ref{tabla:s_data_command}, y se agrega esta estructura a la cola de comandos entrante. 
 
 \begin{figure}
 	\centering
@@ -294,17 +305,45 @@ En este estado se analiza el resultado de la operación de BitCloud para el inic
 
 \begin{figure}
 	\centering
+	\includegraphics[scale=0.25]{capitulo_3_imgs/analisis_mensaje_flujo_parser.pdf}
+	\caption{Diagrama de flujo análisis de protocolo}
+	\label{fig:diagrama_flujo_parser}
+\end{figure}
+
+Para atender cada comando se verifica el inicio de la cola de comandos entrantes, si hay un elemento en esta cola entonces la aplicación pasa al estado de \textit{Procesar comandos}. Si hay elementos en la cola de mensajes salientes entonces la aplicación pasa al estado de \textit{Enviar mensajes}. La figura \ref{fig:diagrama_flujo_analisis} muestra el digrama de flujo de este estado. 
+
+\begin{table}
+	\begin{center}
+		\caption{Estructura de datos s\_data\_command}
+		\label{tabla:s_data_command}
+		\small
+		\begin{tabular}{r|l}
+			\toprule
+			\textbf{Tipo} & \textbf{Variable}\\
+			\midrule
+			uint8\_t & id\_message \\
+			uint8\_t & command \\
+			uint8\_t & data\_length \\
+			uint8\_t & *data \\
+			struct s\_data\_command & *next\_command\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{figure}
+	\centering
 	\includegraphics[scale=0.35]{capitulo_3_imgs/analisis_mensajes_flujo.pdf}
 	\caption{Diagrama de flujo de análisis de mensajes}
 	\label{fig:diagrama_flujo_analisis}
 \end{figure}
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.25]{capitulo_3_imgs/analisis_mensaje_flujo_parser.pdf}
-	\caption{Diagrama de flujo análisis de protocolo}
-	\label{fig:diagrama_flujo_parser}
-\end{figure}
+
+\subsubsection{Procesamiento de comandos}
+
+En este estado se ejecuta el comando especificado en el primer elemento de la lista de comandos entrantes, ver figura \ref{fig:diagrama_secuencia_procesamiento}. Para esto, el primer elemento de la cola es movido a un espacio temporal a traves de la llamada a move\_first\_to\_execute(). Mediante parse\_command() se ejecuta la función de BitCloud asociada a cada comando y se espera su respuesta. La información recibida es almacenada en la estructura y esta se mueve a la cola de mensajes saliente.
+
+La aplicación pasa al estado \textit{Enviar mensajes} si aún hay elementos disponibles en la lista de mensajes salientes, de lo contrario regresa al estado de \textit{Esperar comandos y/o mensajes} como se detalla en la figura \ref{fig:diagrama_flujo_procesamiento}. 
 
 \begin{figure}
 	\centering
@@ -320,43 +359,15 @@ En este estado se analiza el resultado de la operación de BitCloud para el inic
 	\label{fig:diagrama_flujo_procesamiento}
 \end{figure}
 
+\subsubsection{Envío de respuestas}
+
+En este estado se toma el primer elemento de la cola de mensajes salientes, se forma la trama de datos a partir de la información en la estructura de datos y se envía por el puerto serial, ver figura \ref{fig:diagrama_enviar_secuencia}. 
+
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.35]{capitulo_3_imgs/enviar_mensajes_secuencia.pdf}
 	\caption{Diagrama de secuencia enviar mensajes}
 	\label{fig:diagrama_enviar_secuencia}
-\end{figure}
-
-
-
-
-
-
-\subsubsection{Esperar comandos y/o mensajes}
-
-Espera por comandos enviados desde el puerto serial,
-
-\subsubsection{Procesamiento de comandos}
-
-Interpreta, verifica y procesa los comandos enviados desde el puerto serial,
-
-\subsubsection{Envío de respuestas}
-
-Envía un mensaje de respuesta luego de que cada comando ha sido ejecutado. 
-
-
-Es en el estado de \textit{Esperar comandos y/o mensajes} donde se concentra la funcionalidad de la aplicación. Cuando un comando o mensaje es enviado por el puerto serial un \textit{intérprete de protocolo} verifica la estructura de la trama de datos recibida y genera una estructura de datos que almacena el código del comando, el identificador del mensaje y los datos o parámetros proporcionados. 
-
-Un \textit{intérprete de comandos} verifica que el comando recibido esté dentro de los comandos soportados por el dispositivo y que los parámetros sean correctos. Si esto es correcto, la estructura de datos es ingresada en la \textit{cola de solicitudes}, en caso contrario la estructura de datos se ingresa en la \textit{cola de respuestas}. 
-
-La cola de solicitudes contiene la estructura de datos de cada comando recibido desde el puerto serial. El estado de \textit{Esperar comandos y/o mensajes} obtiene el primer elemento de la cola de solicitudes, ejecuta el comando asociado y almacena la respuesta en la cola de respuestas. Por último, el intérprete de protocolo convierte la estructura de datos nuevamente en una trama del protocolo para ser enviada por el puerto serial. En la figura \ref{fig:interprete_mensajes} se muestra un diagrama de bloques de este proceso. 
-
-
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.5]{capitulo_3_imgs/estructura_interprete.pdf}
-	\caption{Estructura del intérprete de mensajes}
-	\label{fig:interprete_mensajes}
 \end{figure}
 
 
