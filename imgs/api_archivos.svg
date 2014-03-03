@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="48cm" height="24cm" viewBox="316 -41 960 475" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="317" y="-19.25" width="958" height="452"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="317" y="-19.25" width="958" height="452"/>
+    <rect style="fill: #ffffff" x="317" y="-39.25" width="142.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="317" y="-39.25" width="142.6" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="319" y="-25.25">Archivos de la API</text>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="393" y="26" width="371.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="393" y="26" width="371.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="578.95" y="44">serial.c</text>
+    <rect style="fill: #ffd294" x="393" y="54" width="371.9" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="393" y="54" width="371.9" height="8"/>
+    <rect style="fill: #ffd294" x="393" y="62" width="371.9" height="116"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="393" y="62" width="371.9" height="116"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="396" y="75.2">+&lt;&lt;int&gt;&gt; serial_open()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="396" y="91.2">+&lt;&lt;void&gt;&gt; init_variables()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="396" y="107.2">+&lt;&lt;int&gt;&gt; serial_write_byte(byte:unsigned char)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="396" y="123.2">+&lt;&lt;int&gt;&gt; serial_read_byte(*buf:char,len:int)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="396" y="139.2">+&lt;&lt;void&gt;&gt; *serial_recv(*arg:void)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="396" y="155.2">+&lt;&lt;int&gt;&gt; add_byte_to_buffer(data:unsigned char)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="396" y="171.2">+&lt;&lt;void&gt;&gt; flush_serial_buffer()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="351" y="226" width="441.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="351" y="226" width="441.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="571.6" y="244">protocol_parser.c</text>
+    <rect style="fill: #ffd294" x="351" y="254" width="441.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="351" y="254" width="441.2" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="267.2">+recv_frame_len: static int</text>
+    <rect style="fill: #ffd294" x="351" y="274" width="441.2" height="132"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="351" y="274" width="441.2" height="132"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="287.2">+&lt;&lt;int&gt;&gt; recv_data()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="303.2">+&lt;&lt;command_t&gt;&gt; parse_recv_command(*buffer:unsigned char,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="319.2">                                  recv_len:int)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="335.2">+&lt;&lt;int&gt;&gt; send_command(cmd:unsigned char,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="351.2">                      *data:unsigned char,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="367.2">                      id:unsigned char)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="383.2">+&lt;&lt;int&gt;&gt; write_data_frame(*data:unsigned char,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="354" y="399.2">                          len:int)</text>
+  </g>
+  <g>
+    <rect style="fill: #ffd294" x="909" y="31" width="333.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="909" y="31" width="333.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1075.7" y="49">commands.c</text>
+    <rect style="fill: #ffd294" x="909" y="59" width="333.4" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="909" y="59" width="333.4" height="8"/>
+    <rect style="fill: #ffd294" x="909" y="67" width="333.4" height="116"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="909" y="67" width="333.4" height="116"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="912" y="80.2">+&lt;&lt;unsigned char&gt;&gt; device_status()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="912" y="96.2">+&lt;&lt;int&gt;&gt; get_network_status()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="912" y="112.2">+&lt;&lt;int&gt;&gt; get_childre_amount()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="912" y="128.2">+&lt;&lt;int&gt;&gt; get_children_list(*childrens:int)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="912" y="144.2">+&lt;&lt;int*&gt;&gt; get_lqi_rssi(addr:int)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="912" y="160.2">+&lt;&lt;int&gt;&gt; send_data(data:data_node_t)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="912" y="176.2">+&lt;&lt;int&gt;&gt; enable_data_recv()</text>
+  </g>
+</svg>

@@ -1,26 +1,26 @@
 \chapter{Diseño e implementaci\'on del sistema}
 
-\section{Requerimientos}
+%\section{Requerimientos}
 
-Antes del diseño del dispositivo es necesario considerar los siguientes requerimientos de hardware y software.
+%Antes del diseño del dispositivo es necesario considerar los siguientes requerimientos de hardware y software.
 
-\subsubsection{Requerimientos de hardware}
+%\subsubsection{Requerimientos de hardware}
 
-\begin{enumerate}
-	\item El dispositivo debe incluir un transceptor inalámbrico de 2.4 GHz que cumpla con los estándares IEEE 802.15.4 y ZigBee, 
-	\item El dispositivo contará con una interfaz RS-232 para la comunicación serial hacia la computadora embebida, 
-	\item El dispositivo deberá contar con un microcontrolador soportado por la pila de desarrollo Atmel BitCloud,
-	\item El dispositivo, al funcionar junto a la computadora embebida, deberá compartir la misma fuente de alimentación, razón por la cual el rango de voltaje de operación deberá ser congruente al voltaje de operación de la computadora embebida, 
-	\item Se debe considerar la disponibilidad de puertos de expansión para la conexión de sensores y otros dispositivos, 
-\end{enumerate}
+%\begin{enumerate}
+%	\item El dispositivo debe incluir un transceptor inalámbrico de 2.4 GHz que cumpla con los estándares IEEE 802.15.4 y ZigBee, 
+%	\item El dispositivo contará con una interfaz RS-232 para la comunicación serial hacia la computadora embebida, 
+%	\item El dispositivo deberá contar con un microcontrolador soportado por la pila de desarrollo Atmel BitCloud,
+%	\item El dispositivo, al funcionar junto a la computadora embebida, deberá compartir la misma fuente de alimentación, razón por la cual el rango de voltaje de operación deberá ser congruente al voltaje de operación de la computadora embebida, 
+%	\item Se debe considerar la disponibilidad de puertos de expansión para la conexión de sensores y otros dispositivos, 
+%\end{enumerate}
 
-\subsubsection{Requerimientos de software}
+%\subsubsection{Requerimientos de software}
 
-\begin{enumerate}
-	\item Se requiere que el dispositivo gestione una WSN, transfiera mensajes desde la WSN hacia el exterior y env\'ie comandos de configuraci\'on hacia los dem\'as dispositivos en la red, 
-	\item El dispositivo debe transmitir mediante la interfaz RS-232 la información generada por los nodos en la red, 
-	\item Debe ser posible enviar comandos de control hacia los nodos en la red.
-\end{enumerate}
+%\begin{enumerate}
+%	\item Se requiere que el dispositivo gestione una WSN, transfiera mensajes desde la WSN hacia el exterior y env\'ie comandos de configuraci\'on hacia los dem\'as dispositivos en la red, 
+%	\item El dispositivo debe transmitir mediante la interfaz RS-232 la información generada por los nodos en la red, 
+%	\item Debe ser posible enviar comandos de control hacia los nodos en la red.
+%\end{enumerate}
 
 \section{Diseño del hardware}
 
@@ -240,7 +240,7 @@ La primera respuesta devuelve una trama compuesta por 8 bytes, en este caso se d
  
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.4]{capitulo_3_imgs/protocolo_ejemplo_1.pdf}
+	\includegraphics[scale=0.3]{capitulo_3_imgs/protocolo_ejemplo_1.pdf}
 	\caption{Ejemplo de uso de protocolo de comunicación}
 	\label{fig:protocolo_ejemplo}
 \end{figure}
@@ -254,7 +254,7 @@ La primera respuesta devuelve una trama compuesta por 8 bytes, en este caso se d
 	\label{fig:maquina_estados_sd}
 \end{figure}
 
-Para el software embebido del dispositivo se desarrolló una aplicación de BitCloud que se encarga de recibir mensajes y/o comandos desde la interfaz RS-232, validar que la información recibida esté estructura en términos del protocolo de comunicación diseñado y por último, implementar la funcionalidad de cada uno de los comandos, utilizando para esto las funciones que provee BitCloud para el control de periféricos y de la red inalámbrica. En la figura \ref{fig:maquina_estados_sd} se puede ver a la aplicación representada como una máquina de estados los cuales son detallados a continuación. 
+Para el software embebido del dispositivo se desarrolló una aplicación de BitCloud que se encarga de recibir mensajes y/o comandos desde la interfaz RS-232, validar que la información recibida esté estructura en términos del protocolo de comunicación diseñado y por último, implementar la funcionalidad de cada uno de los comandos, utilizando para esto las funciones que provee BitCloud para el control de periféricos y de la red inalámbrica. En la figura \ref{fig:maquina_estados_sd} se puede ver a la aplicación representada como una máquina de estados los cuales son detallados a continuación, mientras que en la tabla \ref{tabla:componentes_software} se describe el contenido de cada archivo de la aplicaci\'on
 
 \begin{figure}
 	\centering
@@ -262,6 +262,25 @@ Para el software embebido del dispositivo se desarrolló una aplicación de BitC
 	\caption{Inicialización de la aplicación}
 	\label{fig:diagrama_inicializacion}
 \end{figure}
+
+\begin{table}
+	\begin{center}
+		\caption{Componentes del software embebido}
+		\label{tabla:componentes_software}
+		\small
+		\begin{tabular}{r|m{7cm}}
+			\toprule
+			\textbf{Archivo} & \textbf{Funcionamiento}\\
+			\midrule
+			SerialDongle.c & Contiene la lógica de la máquina de estados de la aplicación; es el punto de entrada del programa. \\
+			ProtocolParser.c & Conjunto de funciones para el intérprete del protocolo, control de colas de mensajes y generación de mensajes de error. \\
+			Commands.c & Asociación de cada comando con funciones de BitCloud así como la implementación de cada comando. \\
+			UsartController.c & Configuración de la interfaz serial y funciones de envío y recepción de datos de bajo nivel.\\
+			Visualizer.c & Funciones para el control de LEDs.\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
 
 \subsubsection{Inicialización}
 
@@ -371,4 +390,46 @@ En este estado se toma el primer elemento de la cola de mensajes salientes, se f
 \end{figure}
 
 
-\subsection{Programación API MOXA}
+\subsection{Interfaz de programación para la computadora embebida}
+
+Para utilizar el dispositivo desde la computadora embebida se diseñó una interfaz de programación (API) que provee un conjunto de funciones para el control del dispositivo y transferencia de información. La estructura de esta API, ver figura \ref{fig:diagrama_api_archivos}, consiste en tres partes principales: 1) Las funciones de bajo nivel para el control del puerto RS-232 dentro del archivo serial.c, 2) el intérprete de protocolo en el archivo protocol\_parser.c y 3) el conjunto de funciones que sirven como interfaz hacia el usuario dentro del archivo commands.c.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{capitulo_3_imgs/api_estructura.pdf}
+	\caption{Diagrama de archivos de la API}
+	\label{fig:diagrama_api_archivos}
+\end{figure}
+
+\subsubsection{Funciones de bajo nivel}
+
+Dentro del archivo serial.c se encuentran las funciones de bajo nivel para la configuración y control del puerto serial. Mediante la función serial\_open() se abre el puerto serial para las operaciones de lectura y escritura. La velocidad de transmisión se ha configurado a 38400 bauds, la misma que el dispositivo, pero puede ser redefinida mediante la variable BAUDRATE dentro de serial.h. 	Al terminar la apertura del puerto, la función open\_serial() devuelve un identificador de archivo (\textit{file descriptor}), en caso de alg\'un error el valor de retorno ser\'a cero. La función close\_serial() cierra la operación del puerto.
+
+Las operaciones de lectura y escritura sobre el puerto se realizan con las funciones serial\_write\_byte y serial\_read\_byte. La función serial\_write\_byte envía por el puerto el byte que se ha recibido como parámetro, si existe algún error la función devuelve valores distintos de cero. La lectura de datos se realiza con la función serial\_read\_byte. Esta función recibe dos parámetros: 1) El apuntador a un buffer donde almacenar la información recibida y 2) la longitud de datos que se leerán del puerto. Esta función devuelve valores distintos de cero en caso de existir algún error. 
+
+\subsubsection{Interprete de protocolo}
+
+El archivo protocol\_parser.c contiene las mismas funciones del intérprete de protocolo utilizada en el software del dispositivo, estas funciones son una interfaz entre las funciones de bajo nivel y la implementación de los comandos, por lo tanto no son visibles para el usuario. 
+
+La función recv\_data analiza los bytes que llegan desde el puerto serial y verifica la estructura de la trama. Esta función evalúa las mismas condiciones descritas para el software embebido como la cabecera de la trama y longitud. Adicionalmente, en esta función se evalúa el tiempo de espera entre bytes recibidos, de esta forma la función devolverá un codigo de error cuando se envíe una trama incompleta.
+
+Cuando se ha recibido una trama completa la función parse\_recv\_command es llamada, esta función convierte la trama de datos seriales en la estructura command\_t, mostrada en la figura \ref{fig:diagrama_api_estructuras}, esta estructura será utilizada por las funciones de los comandos que se detallarán más adelante.
+
+La función send\_command convierte los comandos especificados en tramas de datos, recibe como parámetro una estructura command\_t con la información del comando. 
+
+\subsubsection{Comandos}
+
+En el archivo commands.c se encuentra la implementación de los comandos del dispositivo, estas funciones constituyen la principal interfaz del usuario con la API. 
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.8]{capitulo_3_imgs/estructuras_comandos.pdf}
+	\caption{Estructuras de datos de la API}
+	\label{fig:diagrama_api_estructuras}
+\end{figure}
+
+La función device\_status verifica que el dispositivo esté conectado físicamente a la computadora, si el dispositivo está conectado la función devuelve cero. La función get\_network\_--status() obtiene el estado de la red, devuelve una estructura nwk\_status\_t que se muestra en la figura \ref{fig:diagrama_api_estructuras}. Si la red no ha sido iniciada las variables dentro de la estructura serán igual a cero. 
+
+Las funciones get\_children\_amount y get\_children\_list obtienen la cantidad de dispositivos conectados a la red, así como las direcciones de cada dispositivo. La función get\_lqi\_rssi obtienen los valores LQI y RSSI del dispositivo al que se especifique en el parámetro de la función, si el dispositivo especificado no está disponible, los valores dentro de la estructura lqi\_rssi\_t serán igual a cero.  
+
+La función send\_data envía datos a un nodo en particular. Esta función acepta como parámetro una estructura data\_node\_t que contiene la dirección del nodo destino y los datos a enviar. Por último, la función enable\_data\_recv habilita la recepción de datos desde el dispositivo, recibe como parámetro un apuntador a una función que se ejecutará de manera asíncrona cada vez que se reciban datos desde el dispositivo. Esta función asíncrona debe ser creada por el usuario teniendo como prototipo la forma \texttt{void asincfunction(command\_t data\_recv)}. 
