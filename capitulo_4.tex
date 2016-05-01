@@ -20,7 +20,7 @@
 
 \section{Verificaci\'on de funcionamiento del dispositivo}
 
-El proceso de pruebas consiste en una serie de pruebas a los distintos componentes que lo forman, las cuales se listan a continuaci\'on:
+El proceso de validaci\'on consiste en una serie de pruebas a los distintos componentes que lo forman, las cuales se listan a continuaci\'on:
 
 \begin{itemize}
 \item Verificaci\'on f\'isica del dispositivo y comprobaci\'on de funcionamiento en el rango de voltaje esperado, 
@@ -51,22 +51,22 @@ Se verific\'o el voltaje de operaci\'on y se logr\'o encender el dispositivo en 
 
 %Por otro lado, las pruebas de funcionamiento de componentes consisten en la verificaci\'on del funcionamiento de cada uno de los componentes que forman al dispositivo. Pruebas tales como la verificaci\'on de la interfaz de programaci\'on del microcontrolador, la verificaci\'on del funcionamiento de los puertos de prop\'osito general, puerto serial y radio comunicaci\'on. 
 
-\subsection{Verificaci\'on de funcionamiento del microcontrolador}
+\subsection{Verificaci\'on del funcionamiento del microcontrolador}
 
-Una vez que se ha comprobado del funcionamiento el\'ectrico del dispositivo se verifica el estado del microcontrolador, en particular se comprueba que: 
+Una vez que se ha comprobado el funcionamiento el\'ectrico del dispositivo se verifica el estado del microcontrolador, en particular se comprueba que: 
 
 \begin{itemize}
-\item El funcionamiento de las interfaces JTAG y SPI. Se comprueba en este paso la capacidad del dispositivo de ser programado, 
-\item Comprobaci\'on de puertos de prop\'osito general,
-\item Verificaci\'on del funcionamiento de la interfaz de comunicaci\'on serial, 
-\item Verificaci\'on del funcionamiento de la radio comunicaci\'on.
+\item El funcionamiento de las interfaces JTAG y SPI es el adecuado. Es posible leer el identificador del microcontrolador a trav\'es de estas interfaces utilizando un programador de microcontroladores,
+\item Los puertos de prop\'osito general operan correctamente presentando transiciones de 0V a VCC Vcd para estados l\'ogicos de 0 a 1 respectivamente,
+\item Que el transceptor serial funciona adecuadamente haciendo posible el env\'io y recepci\'on de datos desde y hacia el dispositivo, 
+\item Que el transceptor de radio frecuencia es capaz de establecer conexi\'on con otros dispositivos.
 \end{itemize}
 
-
+Para simplificar el proceso de pruebas, todas estas verificaciones se hicieron ejecutando la aplicaci\'on de demostraci\'on WSNDemo (ver anexo) en el dispositivo SerialDongle.
 
 \subsection{Medici\'on de consumo de corriente}
 
-Posteriormente se realizaron pruebas de consumo de corriente en distintas etapas de operaci\'on para lo cual se consideraron tres etapas de operaci\'on: 
+Posteriormente se realizaron pruebas de consumo de corriente en distintas etapas de operaci\'on las cuales se clasificaron en tres tipos: 
 
 \begin{itemize}
 \item Modo de transmisi\'on de datos: Todos los componentes del dispositivo est\'an encendidos y se realiza comunicaci\'on inal\'ambrica con otro dispositivo,
@@ -74,7 +74,7 @@ Posteriormente se realizaron pruebas de consumo de corriente en distintas etapas
 \item Modo de ahorro de energ\'ia: El microcontrolador es enviado a modo de ahorro de energ\'ia, sin embargo algunos componentes externos siguen en funcionamiento. 
 \end{itemize}
 
-Estas pruebas requieren que el funcionamiento de los componentes sea el esperado, dichas pruebas se detallan m\'as adelante. Utilizando la aplicaci\'on de prueba WSNDemo de BitCloud en dos dispositivos SerialDongle, se realiz\'o el siguiente experimento,
+Utilizando la aplicaci\'on de prueba WSNDemo de BitCloud en dos dispositivos SerialDongle, se realiz\'o el siguiente experimento,
 
 \begin{enumerate}
 \item Programar un dispositivo como nodo coordinador,
@@ -82,9 +82,6 @@ Estas pruebas requieren que el funcionamiento de los componentes sea el esperado
 \item Encender ambos dispositivos y verificar la conexi\'on inal\'ambrica,
 \item Aplicando un voltaje de 5 Vcd, se mide el consumo de corriente en ambos dispositivos. 
 \end{enumerate}
-
-WSNDemo es una aplicaci\'on de prueba de BitCloud que tiene la finalidad de demostrar la funcionalidad b\'asica de BitCloud. Su funci\'on consiste en registrar un nodo como coordinador de la red, mientras que otros nodos se registran en la red como nodos finales. El nodo coordinador estar\'a esperando a que alguno de los nodos env\'ie informaci\'on, cuando \'esta es recibida enviar\'a los datos por la interfaz serial. 
-Por otro lado, el nodo final una vez encendido y registrado en la red, recolectar\'a datos como temperatura y voltaje del dispositivo (informaci\'on que provee el mismo microcontrolador) y enviar\'a esta informaci\'on al nodo coordinador para posteriormente entrar en modo de ahorro de energ\'ia. Luego de cierto tiempo el nodo volver\'a en funcionamiento normal para volver a enviar m\'as informaci\'on. 
 
 Se midi\'o el consumo de corriente cuando : 
 
@@ -121,19 +118,39 @@ Se midi\'o el consumo de corriente cuando :
 
 \subsection{Medici\'on de alcance de radio comunicaci\'on}
 
+Explicar el experimento. 
+Mostrar grafica de calidad de la senial dependiendo de la distancia. 
+Verificar si esta informacion esta dentro del cartel. 
 
-
-Pruebas de voltaje y corriente, verificaci\'on de cortos. 
-Agregar tabla de voltaje y corriente leido (obtener del cartel)
-
-Pruebas al microcontrolador: Test de programacion y puerto JTAG, programa de ejemplo. Test de puertos, puerto serial. 
-Test de radio (prueba con software de ejemplo de BitCloud), agregar la prueba de comunicacion y distancia aqui. ASi como de los consumos de corriente y la comparacion con el otro dispositivo. 
-
-Estas son las pruebas para conocer el estado funcional del dispositivo. 
 
 \section{Pruebas de software}
 
+Explicar distintos escenarios de pruebas del software. 
+- Comunicacion con otro nodo. 
+- Red de tres nodos conectados.
+
+Execucion basica de comandos 
+Ejecucion manual de comando mediante una aplicacion de trasnferencia de datos serial
+- Sacar capturas de pantalla de gtkterm u otra aplicacion interactuando con el simulador. 
+- 
+
 \subsection{Aplicaci\'on de ejemplo}
+
+- Explicar el funcionamiento basico de la aplicacion. 
+-- Programa en C que: 
+---- Se conecta con el dispositivo, verifica su funcionamiento.
+---- Lista todos los dispositivos en la red. 
+---- Envia un comando a todos los dispositivos
+---- Envia un comando a una lista de nodos
+---- Recibe datos de todos los nodos en la red y los imprime en pantalla. 
+
+sd\_control --status 
+sd\_control --list
+sd\_control --command="1" --nodes="1234,ef43"
+sd\_control --command="2" --broadcast
+sd\_control --read
+Ctrl+C to exit..
 
 \subsection{Resultados de ejecuci\'on}
 
+Capturas de pantalla del programa, mostrar algo de codigo de las secciones interesantes. 
